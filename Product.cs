@@ -78,7 +78,6 @@ namespace Lab_10
             base.RandomInit();
             Random rnd = new Random();
             ExpirationDate = new DateOnly(2023, 12, rnd.Next(1, 31));
-                
         }
 
         public override object Clone()

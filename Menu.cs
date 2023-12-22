@@ -48,7 +48,7 @@ namespace Lab_10
                 }
                 if (par == "+")
                 {
-                    if (number > 1)
+                    if (number >= 1)
                     {
                         isNotNul = true;
                         isNotNeg = true;

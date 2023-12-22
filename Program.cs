@@ -93,7 +93,6 @@ namespace Lab_10
             Goods[] goodsArray = null;
             do
             {
-                Console.WriteLine("Выберите задание");
                 Console.WriteLine("----- 1 часть --------");
                 Console.WriteLine("1.Сгенерировать массив (рандомно)");
                 Console.WriteLine("2.Сгенерировать массив (вручную)");
@@ -105,10 +104,11 @@ namespace Lab_10
                 Console.WriteLine("7.Запрос: Суммарная стоимость товара заданного наименования");
                 Console.WriteLine("------- 3 часть --------");
                 Console.WriteLine("8.Демонтрация работы IInit");
-                Console.WriteLine("9.Демонстрация сортировки, используя IComparable");
-                Console.WriteLine("10.Демонстрация сортировки, используя ICompare");
+                Console.WriteLine("9.Демонстрация сортировки, используя IComparable (по названию)");
+                Console.WriteLine("10.Демонстрация сортировки, используя ICompare (по весу)");
                 Console.WriteLine("11. Демонстрация клонирования");
                 Console.WriteLine("0.Завершить работу");
+                Console.Write("Выберите задание: ");
                 choice = Console.ReadLine();
                 switch(choice)
                 {
@@ -202,8 +202,8 @@ namespace Lab_10
                     case "10":
                         if (goodsArray != null)
                         {
-                            Array.Sort(goodsArray, new SortByPrice());
-                            Console.WriteLine("Отсортированный массив по цене: ");
+                            Array.Sort(goodsArray, new SortByWeight());
+                            Console.WriteLine("Отсортированный массив по весу: ");
                             ShowGoodsArrayVirtual(goodsArray);
                             Console.WriteLine("Для продолжения нажмите любую клавишу...");
                             Console.ReadKey();
@@ -215,6 +215,85 @@ namespace Lab_10
                             Console.Clear();
                         }
                         break;
+                    case "11":
+                        //Product originalProduct = new();
+                        //originalProduct.RandomInit();
+                        ////Product cloneProduct = (Product)originalProduct.Clone();
+
+                        //Console.WriteLine("Объекты до изменения:");
+                        //Console.WriteLine();
+                        //Console.WriteLine("Первоначальный объект");
+                        //originalProduct.Show();
+                        //Console.WriteLine();
+                        //Console.WriteLine("Склонированный объект");
+                        //((Product)originalProduct.Clone()).Show();
+                        ////cloneProduct.Show();
+                        //Console.WriteLine();
+                        //Console.WriteLine("Скопироавнный объект");
+                        //originalProduct.ShallowCopy().Show();
+                        //Console.WriteLine();
+                        //originalProduct.Price = 999999;
+                        //Console.WriteLine("Объекты после изменения цены в первоначальном:");
+                        //Console.WriteLine();
+                        //Console.WriteLine("Первоначальный объект");
+                        //originalProduct.Show();
+                        //Console.WriteLine();
+                        //Console.WriteLine("Склонированный объект");
+                        //((Product)originalProduct.Clone()).Show();
+                        ////cloneProduct.Show();
+                        //Console.WriteLine();
+                        //Console.WriteLine("Скопироавнный объект");
+                        //originalProduct.ShallowCopy().Show();
+                        //Console.WriteLine();
+
+
+                        var originalProduct = new Goods();
+                        originalProduct.RandomInit();
+                        originalProduct.Tags = new List<string> { "1", "2", "3" };
+                        var clonedProduct = (Goods)originalProduct.Clone();
+
+                        Console.WriteLine("До изменения полное копирование:");
+                        clonedProduct.Show();
+                        Console.Write("Тег: ");
+                        foreach (var item in clonedProduct.Tags)
+                            Console.Write(item + " ");
+                        Console.WriteLine();
+                        Console.WriteLine();
+
+                        originalProduct.Tags.Add("999");
+
+                        Console.WriteLine("После изменеия полное копирование:");
+                        clonedProduct.Show();
+                        Console.Write("Тег: ");
+                        foreach (var item in clonedProduct.Tags)
+                            Console.Write(item + " ");
+                        Console.WriteLine();
+                        Console.WriteLine();
+
+                        originalProduct.RandomInit();
+                        originalProduct.Tags = new List<string> { "1", "2", "3" };
+                        var shallowCopyProduct = originalProduct.ShallowCopy();
+
+                        Console.WriteLine("До изменения неполное копирование:");
+                        shallowCopyProduct.Show();
+                        Console.Write("Тег: ");
+                        foreach (var item in shallowCopyProduct.Tags)
+                            Console.Write(item + " ");
+                        Console.WriteLine();
+                        Console.WriteLine();
+
+                        originalProduct.Tags.Add("999");
+
+                        Console.WriteLine("После изменения неполное копирование:");
+                        shallowCopyProduct.Show();
+                        Console.Write("Тег: ");
+                        foreach (var item in shallowCopyProduct.Tags)
+                            Console.Write(item + " ");
+                        Console.WriteLine();
+                        Console.WriteLine("Для продолжения нажмите любую клавишу...");
+                        Console.ReadKey();
+                        break;
+
                 }
             } while (choice != "0");
 

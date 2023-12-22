@@ -11,7 +11,7 @@ namespace Lab_10
         private string name;
         private double price;
         private double weight;
-        public List<string> Tags { get; set; }
+        public List<string> Tags { get; set; } // для показа различия между поверх и полным копированием
         public string Name { get; set; }
 
         public double Price
@@ -118,15 +118,12 @@ namespace Lab_10
         }
 
         public virtual object Clone()
-        {
-            var newGoods = (Goods)this.MemberwiseClone();
-            return newGoods;
+        { 
+            return new Goods() { Name = Name, Price = Price, Weight = Weight, Tags = new List<string>(Tags) };
         }
-
         public virtual Goods ShallowCopy()
         {
-            var newGoods = (Goods)this.MemberwiseClone();
-            return newGoods;
+            return (Goods)this.MemberwiseClone();
         }
 
         public int CompareTo(object? obj)

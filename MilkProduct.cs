@@ -78,8 +78,7 @@ namespace Lab_10
 
         public override object Clone()
         {
-            var newProduct = (MilkProduct)MemberwiseClone();
-            return newProduct;
+            return new MilkProduct() { Name = Name, Price = Price, Weight = Weight, ExpirationDate = ExpirationDate, FatContent = FatContent };
         }
 
         public override MilkProduct ShallowCopy()

@@ -216,37 +216,6 @@ namespace Lab_10
                         }
                         break;
                     case "11":
-                        //Product originalProduct = new();
-                        //originalProduct.RandomInit();
-                        ////Product cloneProduct = (Product)originalProduct.Clone();
-
-                        //Console.WriteLine("Объекты до изменения:");
-                        //Console.WriteLine();
-                        //Console.WriteLine("Первоначальный объект");
-                        //originalProduct.Show();
-                        //Console.WriteLine();
-                        //Console.WriteLine("Склонированный объект");
-                        //((Product)originalProduct.Clone()).Show();
-                        ////cloneProduct.Show();
-                        //Console.WriteLine();
-                        //Console.WriteLine("Скопироавнный объект");
-                        //originalProduct.ShallowCopy().Show();
-                        //Console.WriteLine();
-                        //originalProduct.Price = 999999;
-                        //Console.WriteLine("Объекты после изменения цены в первоначальном:");
-                        //Console.WriteLine();
-                        //Console.WriteLine("Первоначальный объект");
-                        //originalProduct.Show();
-                        //Console.WriteLine();
-                        //Console.WriteLine("Склонированный объект");
-                        //((Product)originalProduct.Clone()).Show();
-                        ////cloneProduct.Show();
-                        //Console.WriteLine();
-                        //Console.WriteLine("Скопироавнный объект");
-                        //originalProduct.ShallowCopy().Show();
-                        //Console.WriteLine();
-
-
                         var originalProduct = new Goods();
                         originalProduct.RandomInit();
                         originalProduct.Tags = new List<string> { "1", "2", "3" };

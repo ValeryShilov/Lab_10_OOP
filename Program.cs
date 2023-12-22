@@ -252,7 +252,7 @@ namespace Lab_10
                         originalProduct.Tags = new List<string> { "1", "2", "3" };
                         var clonedProduct = (Goods)originalProduct.Clone();
 
-                        Console.WriteLine("До изменения полное копирование:");
+                        Console.WriteLine("Клонирование до изменения:");
                         clonedProduct.Show();
                         Console.Write("Тег: ");
                         foreach (var item in clonedProduct.Tags)
@@ -262,7 +262,7 @@ namespace Lab_10
 
                         originalProduct.Tags.Add("999");
 
-                        Console.WriteLine("После изменеия полное копирование:");
+                        Console.WriteLine("Клонироавние после изменения:");
                         clonedProduct.Show();
                         Console.Write("Тег: ");
                         foreach (var item in clonedProduct.Tags)
@@ -274,7 +274,7 @@ namespace Lab_10
                         originalProduct.Tags = new List<string> { "1", "2", "3" };
                         var shallowCopyProduct = originalProduct.ShallowCopy();
 
-                        Console.WriteLine("До изменения неполное копирование:");
+                        Console.WriteLine("Поверхностное копирование до изменения:");
                         shallowCopyProduct.Show();
                         Console.Write("Тег: ");
                         foreach (var item in shallowCopyProduct.Tags)
@@ -284,7 +284,7 @@ namespace Lab_10
 
                         originalProduct.Tags.Add("999");
 
-                        Console.WriteLine("После изменения неполное копирование:");
+                        Console.WriteLine("Поверхностное копирование после изменения:");
                         shallowCopyProduct.Show();
                         Console.Write("Тег: ");
                         foreach (var item in shallowCopyProduct.Tags)
